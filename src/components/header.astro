@@ -1,0 +1,40 @@
+<header class="bg-transparent text-white p-4 fixed top-0 left-0 w-full flex justify-between items-center z-50" id="header">
+  <a href="/#" class="flex text-center" style="align-items: center;" id="logo">
+  <img src="./logo.png" alt="Logo" class="w-12 h-12 visible"  />
+  <h2
+      style="font-family: 'Star Wars', sans-serif;"
+      class="text-center gradient font-light tracking-tighter text-2xl z-10 ml-4 gradient-text"
+    >
+      PaDawaN
+    </h2>
+  </a>
+  <div class="hidden sm:block">
+    <!-- Aquí puedes agregar cualquier contenido que desees en el centro -->
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <!-- Botones de idioma -->
+    <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEs">ES</button>
+    <span>|</span>
+    <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEn">EN</button>
+
+    <!-- Menú hamburguesa (oculto en pantallas grandes) -->
+    <button class="text-gray-300 hover:text-white focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<style>
+  #logo {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Añadir transición de 0.5 segundos */
+  }
+
+  #logo.visible {
+    opacity: 1;
+  }
+</style>
+

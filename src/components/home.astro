@@ -1,0 +1,107 @@
+---
+import Starfield from "~/components/starfield.astro";
+const { homeText } = Astro.props;
+
+---
+
+<script>
+  function handleScroll() {
+    const scrollIcon = document.getElementById("scrollIcon");
+    const logo = document.getElementById("logo");
+    const header = document.getElementById("header");
+
+    // Verificar la posición vertical de desplazamiento
+    if (scrollIcon) {
+      // Si se ha hecho scroll hacia abajo, ocultar el div suavemente
+      if (window.scrollY > 0) {
+        scrollIcon.style.opacity = "0";
+      } else {
+        scrollIcon.style.opacity = "1";
+      }
+    }
+
+    if (logo && header) {
+      // Verificar la posición vertical de desplazamiento
+      if (window.scrollY > 0) {
+        // Si se ha hecho scroll hacia abajo, mostrar el logo con la clase "visible"
+        logo.classList.add("visible");
+        header.classList.remove("bg-transparent");
+        header.classList.add("bg-black");
+      } else {
+        // Si se ha hecho scroll hacia arriba o no se ha hecho scroll, ocultar el logo
+        logo.classList.remove("visible");
+        header.classList.remove("bg-black");
+        header.classList.add("bg-transparent");
+      }
+    }
+  }
+
+  // Agregar un listener para el evento de desplazamiento
+  window.addEventListener("scroll", handleScroll);
+
+  // Llamar a handleScroll una vez para manejar el estado inicial
+  handleScroll();
+</script>
+
+
+
+<section class="relative h-full w-full bg-black">
+  <Starfield />
+  <div class="relative grid h-full place-items-center content-center">
+    <img src="./halcon-milenario-arriba-izq.png" alt="Nave Oscura" class="absolute z-0" style="height:45rem; width:auto;" />
+    <h2
+      style="font-family: 'Star Wars', sans-serif;"
+      class="text-center font-light tracking-tighter text-8xl z-10"
+    >
+      PaDawaN
+    </h2>
+    <h3 class="mt-10 w-6/12 text-center z-10 font-medium">{homeText}</h3>
+    <div class="scroll-downs relative top-40" id="scrollIcon">
+      <div class="mousey">
+        <div class="scroller"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  #scrollIcon {
+    transition: opacity 0.5s ease;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #astronaut {
+      @apply animate-none;
+    }
+
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import image from "~/assets/img-our-service.png"
+import { Picture } from "@astrojs/image/components";
+const {textOurServices} = Astro.props;
+const widths = [450, 800, 1200];
+const sizes = "20rem";
+---
+
+<ContentSection title={textOurServices.ourServicesTitle} id="ourServices">
+  <Fragment slot="image">
+    <Picture
+  class="object-cover"
+  src={image}
+  widths={widths}
+  sizes={sizes}
+  alt="The ridged surface of the moon"
+/>
+  </Fragment>
+  <Fragment slot="paragraph">
+    <div class="grid grid-cols-1 w-2/3  mt-10 gap-1">
+    <div class="w-2/3">
+      <p class="font-bold text-lg	">{textOurServices.consultingTitle}</p>
+      <p class="font-thin text-base	mt-2">{textOurServices.consulting}</p>
+    </div>
+    <div class="w-2/3">
+      <p class="font-bold text-lg ">{textOurServices.SoftwareDevelopmentTitle}</p>
+      <p class="font-thin text-base	mt-2">{textOurServices.SoftwareDevelopment}</p>
+    </div>
+    <div class="w-2/3">
+      <p class="font-bold text-lg	">{textOurServices.ongoingSuportTitle}</p>
+      <p class="font-thin text-base	mt-2">{textOurServices.ongoingSuport}</p>
+    </div>
+  </div>
+  </Fragment>
+</ContentSection>

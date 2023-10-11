@@ -1,0 +1,72 @@
+---
+import ContentSection from "~/components/content-section.astro";
+import image from "~/assets/img-our-team-guillermo.png";
+import image2 from "~/assets/img-our-team-leandro.png";
+import image3 from "~/assets/img-our-team-tomas.png";
+import image4 from "~/assets/img-our-team-network.png";
+import { Picture } from "@astrojs/image/components";
+const { textOurTeam } = Astro.props;
+const widths = [500, 800, 1200];
+const sizes = "12rem";
+const teamMates = [
+  {
+    nombre: "Guillermo Monge",
+    rol: "Product & Project Manager",
+    mail: "guillermo@padawanway.com",
+    linkedin: "",
+    imgUrl: image,
+  },
+  {
+    nombre: "Leandro Diato",
+    rol: "Senior Backend Developer",
+    mail: "leandro@padawanway.com",
+    linkedin: "",
+    imgUrl: image2,
+  },
+  {
+    nombre: "Tomás Monge Vidal",
+    rol: "Full Stack Developer",
+    mail: "tomas@padawanway.com",
+    linkedin: "",
+    imgUrl: image3,
+  },
+  {
+    nombre: "Our Network",
+    rol: "Developers and Consultants",
+    mail: "hr@padawanway.com",
+    linkedin: "",
+    imgUrl: image4,
+  },
+];
+---
+
+<ContentSection title={textOurTeam.ourTeamTitle} id="ourTeam">
+  <Fragment slot="paragraph">
+    <div class="mb-10 mt-10 grid w-full grid-cols-4 gap-1">
+      {
+        teamMates.map((e) => (
+          <div class="items-center text-center">
+            <Picture
+              class="mx-auto my-auto mb-5 object-cover"
+              src={e.imgUrl}
+              widths={widths}
+              sizes={sizes}
+              alt={e.nombre}
+            />
+            <p class="font-bold">{e.nombre}</p>
+            <p class="font-light text-base">{e.rol}</p>
+            <a href={"mailto:" + e.mail}>
+              <p class="font-thin text-base">{e.mail}</p>
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </Fragment>
+  <Fragment slot="foot">
+    <div class="flex w-full flex-col items-center text-center">
+      <p class="font-bold text-lg">{textOurTeam.ourTeamSubtitle}</p>
+      <p class="w-3/5 font-thin">{textOurTeam.ourTeam}</p>
+    </div>
+  </Fragment>
+</ContentSection>
