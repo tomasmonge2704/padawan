@@ -38,9 +38,9 @@ export const textEn = {
     ourTeamTitle: "Our Team",
     ourTeamSubtitle: "Network of Developers and consultants",
     ourTeam:
-      "We work with a network of experts who join due to project demand. Do you want to work with us? Contact to hr@padawanway.com",
+      "We work with a network of experts who join due to project demand. Do you want to work with us? Contact to ",
     contactUsTitle: "Contact Us",
     contactUsSubTitle: "Let's Transform Your Business Together",
-    desc: "Let us help you achieve your business goals throughdigital transformation. Contact to info@padawanway.com",
+    desc: "Let us help you achieve your business goals throughdigital transformation. Contact to ",
     footerRightText: "About Us",
   };

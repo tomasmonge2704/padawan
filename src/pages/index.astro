@@ -12,7 +12,7 @@ import {textEs} from "../lang/es";
 import {textEn} from "../lang/en";
 const { generator, site } = Astro;
 const image = new URL("logo.png", site);
-const idioma = "EN";
+const idioma = textEn;
 ---
 
 <!doctype html>
@@ -32,15 +32,15 @@ const idioma = "EN";
     <title>Padawan</title>
     <meta
       name="description"
-      content={idioma == "EN" ? textEn.home : textEs.home}
+      content={idioma.home}
     />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="Padawan" />
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content={idioma == "EN" ? textEn.home : textEs.home}
+      content={idioma.home}
     />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
@@ -50,14 +50,14 @@ const idioma = "EN";
     class="h-full w-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <Home homeText={idioma == "EN" ? textEn.home : textEs.home} />
+    <Home homeText={idioma.home} />
     <div class="space-y-24 px-8 py-32">
-      <OurWay textOurWay={idioma == "EN" ? textEn : textEs} />
-      <OurServices textOurServices={idioma == "EN" ? textEn : textEs} />
-      <OurMetodology textOurMetodology={idioma == "EN" ? textEn : textEs} />
-      <OurTeam textOurTeam={idioma == "EN" ? textEn : textEs} />
+      <OurWay textOurWay={idioma} />
+      <OurServices textOurServices={idioma} />
+      <OurMetodology textOurMetodology={idioma} />
+      <OurTeam textOurTeam={idioma} />
     </div>
-    <AboutUs textContactUs={idioma == "EN" ? textEn : textEs} />
+    <AboutUs textContactUs={idioma} />
     
   </body>
 </html>

@@ -38,9 +38,9 @@ export const textEs = {
     ourTeamTitle: "Nuestro Equipo",
     ourTeamSubtitle: "Red de Desarrolladores y Consultores",
     ourTeam:
-      "Trabajamos con una red de expertos que se incorporan por demanda del proyecto. ¿Quieres trabajar con nosotros? Contacta a hr@padawanway.com",
+      "Trabajamos con una red de expertos que se incorporan por demanda del proyecto. ¿Quieres trabajar con nosotros? Contacta a ",
     contactUsTitle: "Contáctanos",
     contactUsSubTitle: "Transformemos Tu Negocio Juntos",
-    desc: "Permítenos ayudarte a alcanzar tus objetivos empresariales a través de la transformación digital. Contáctanos en info@padawanway.com",
+    desc: "Permítenos ayudarte a alcanzar tus objetivos empresariales a través de la transformación digital. Contáctanos en ",
     footerRightText: "Acerca de Nosotros",
   };
