@@ -1,40 +1,155 @@
-<header class="bg-transparent text-white p-4 fixed top-0 left-0 w-full flex justify-between items-center z-50" id="header">
-  <a href="/#" class="flex text-center" style="align-items: center;" id="logo">
+---
+import { Icon } from "astro-icon";
+import ThemeSwitcher from "~/components/theme-switcher.astro";
+import type { NavItem } from "~/types";
+
+const navItems: Array<NavItem> = [
+  { title: "Our Way", url: "#ourway" },
+  { title: "Our Services", url: "#ourServices" },
+  { title: "Our Team", url: "#ourTeam" },
+  { title: "Contact Us", url: "#contactUs" },
+];
+---
+
+<header
+  id="page-header"
+  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+>
+<a href="/#" class="flex text-center" style="align-items: center;" id="logo">
   <img src="./logo.png" alt="Logo" class="w-12 h-12 visible"  />
   <h2
       style="font-family: 'Star Wars', sans-serif;"
-      class="text-center gradient font-light tracking-tighter text-2xl z-10 ml-4 gradient-text"
+      class="sm:inline hidden text-center gradient font-light tracking-tighter text-2xl z-10 ml-4 gradient-text"
     >
       PaDawaN
     </h2>
   </a>
-  <div class="hidden sm:block">
-    <!-- Aquí puedes agregar cualquier contenido que desees en el centro -->
-  </div>
-
-  <div class="flex items-center space-x-4">
-    <!-- Botones de idioma -->
-    <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEs">ES</button>
-    <span>|</span>
-    <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEn">EN</button>
-
-    <!-- Menú hamburguesa (oculto en pantallas grandes) -->
-    <button class="text-gray-300 hover:text-white focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+  <div>
+    <div class="flex items-center gap-6">
+      <nav class="hidden sm:block">
+        <ul class="flex items-center gap-6">
+          {
+            navItems.map(({ title, url }) => (
+              <li>
+                <a class="text-sm" href={url}>
+                  {title}
+                </a>
+              </li>
+            ))
+          }
+           <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEs">ES</button>
+           <span>|</span>
+           <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEn">EN</button>
+        </ul>
+      </nav>
+      <button
+        id="open-nav-button"
+        type="button"
+        class="btn sm:hidden"
+        aria-label="Navigation"
+      >
+        <Icon pack="mdi" name="menu" class="h-8" />
+      </button>
+      <ThemeSwitcher />
+    </div>
+    <div id="menu-modal" class="modal hidden" aria-hidden="true">
+      <div class="fixed inset-0 bg-default px-8 py-4 text-default">
+        <div class="space-y-4" role="dialog" aria-modal="true">
+          <header class="text-right">
+            <button
+              id="close-nav-button"
+              type="button"
+              class="btn"
+              aria-label="Close navigation"
+            >
+              <Icon pack="mdi" name="close" class="h-8" />
+            </button>
+          </header>
+          <div class="flex justify-center">
+              <img src="./logo.png" alt="Logo" class="w-16 h-16 visible"  />
+          </div>
+          <nav>
+            <ul class="flex flex-col">
+              {
+                navItems.map(({ title, url }) => (
+                  <li>
+                    <a class="block py-4 text-center text-xl" href={url}>
+                      {title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
+<script>
+  import MicroModal from "micromodal";
+  import invariant from "tiny-invariant";
+
+  const menuModalId = "menu-modal";
+
+  const header = document.querySelector("#page-header") as HTMLElement;
+  const page = document.documentElement;
+  const menu = document.querySelector(`#${menuModalId} ul`);
+  const openNavButton = document.querySelector("#open-nav-button");
+  const closeNavButton = document.querySelector("#close-nav-button");
+
+  invariant(header, "header should not be null");
+  invariant(menu, "menu should not be null");
+  invariant(openNavButton, "openNavButton should not be null");
+  invariant(closeNavButton, "closeNavButton should not be null");
+
+  const openMenu = () => {
+    MicroModal.show(menuModalId, { disableScroll: true });
+  };
+
+  const closeMenu = () => {
+    MicroModal.close(menuModalId);
+  };
+
+  openNavButton.addEventListener("click", openMenu);
+  closeNavButton.addEventListener("click", closeMenu);
+
+  document.addEventListener("scroll", () => {
+    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+    header.classList.toggle("fixed-header", d < 0);
+  });
+
+  menu.addEventListener("click", (event) => {
+    if ((event.target as HTMLElement).tagName === "A") {
+      closeMenu();
+    }
+  });
+</script>
+
+<noscript>
+  <style>
+    #open-nav-button {
+      display: none;
+    }
+    
+  </style>
+</noscript>
+
 <style>
+  
+  .fixed-header {
+    @apply fixed bottom-auto top-0;
+    @apply border-default bg-default text-default;
+  }
+  .modal.is-open {
+    @apply block;
+  }
   #logo {
     opacity: 0;
     transition: opacity 0.5s ease; /* Añadir transición de 0.5 segundos */
   }
-
   #logo.visible {
     opacity: 1;
   }
 </style>
-

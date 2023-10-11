@@ -8,8 +8,6 @@ const { homeText } = Astro.props;
   function handleScroll() {
     const scrollIcon = document.getElementById("scrollIcon");
     const logo = document.getElementById("logo");
-    const header = document.getElementById("header");
-
     // Verificar la posición vertical de desplazamiento
     if (scrollIcon) {
       // Si se ha hecho scroll hacia abajo, ocultar el div suavemente
@@ -20,18 +18,14 @@ const { homeText } = Astro.props;
       }
     }
 
-    if (logo && header) {
+    if (logo) {
       // Verificar la posición vertical de desplazamiento
       if (window.scrollY > 0) {
         // Si se ha hecho scroll hacia abajo, mostrar el logo con la clase "visible"
         logo.classList.add("visible");
-        header.classList.remove("bg-transparent");
-        header.classList.add("bg-black");
       } else {
         // Si se ha hecho scroll hacia arriba o no se ha hecho scroll, ocultar el logo
         logo.classList.remove("visible");
-        header.classList.remove("bg-black");
-        header.classList.add("bg-transparent");
       }
     }
   }
@@ -48,14 +42,14 @@ const { homeText } = Astro.props;
 <section class="relative h-full w-full bg-black">
   <Starfield />
   <div class="relative grid h-full place-items-center content-center">
-    <img src="./halcon-milenario-arriba-izq.png" alt="Nave Oscura" class="absolute z-0" style="height:45rem; width:auto;" />
+    <img src="./halcon-milenario-arriba-izq.png" alt="Nave Oscura" class="absolute z-0 sm:h-3/4 h-2/5"  />
     <h2
       style="font-family: 'Star Wars', sans-serif;"
-      class="text-center font-light tracking-tighter text-8xl z-10"
+      class="text-center font-light tracking-tighter sm:text-8xl text-4xl z-10"
     >
       PaDawaN
     </h2>
-    <h3 class="mt-10 w-6/12 text-center z-10 font-medium">{homeText}</h3>
+    <h3 class="mt-10 w-9/12 text-center z-10 font-medium">{homeText}</h3>
     <div class="scroll-downs relative top-40" id="scrollIcon">
       <div class="mousey">
         <div class="scroller"></div>

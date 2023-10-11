@@ -3,14 +3,14 @@ const { textContactUs } = Astro.props;
 ---
 
 <section
-  id={textContactUs.constactUSTitle}
-  class="ml-10 flex flex-col content-center"
+  id="contactUs"
+  class="sm:ml-10 ml-5 flex flex-col content-center"
 >
-  <div class="felx-row flex">
+  <div class="flex sm:flex-row flex-col">
     <div class="grid place-items-center content-center">
       <h2
         style="font-family: 'Star Wars', sans-serif;"
-        class="z-10 ml-10 text-center font-light tracking-tighter text-5xl"
+        class="z-10 sm:ml-10 text-center font-light tracking-tighter sm:text-5xl text-2xl"
       >
         this is the Way
       </h2>
@@ -19,20 +19,20 @@ const { textContactUs } = Astro.props;
     <img
       src="./halcon-milenario-arriba-der.png"
       alt="Nave Oscura"
-      class="z-0 ml-28"
+      class="z-0 sm:ml-28"
       style="height:37rem; width:auto;"
     />
   </div>
 
   <div class="mb-14 flex flex-col gap-48">
-    <div class="flex w-full flex-row justify-evenly">
+    <div class="flex w-full sm:flex-row flex-col justify-evenly">
       <div class="z-10 w-full">
         <p class="font-bold text-lg">{textContactUs.contactUsSubTitle}</p>
         <p class="font-thin">{textContactUs.desc}</p>
       </div>
-      <div class="mr-10 grid w-full justify-end">
+      <div class="sm:mr-10 grid w-full sm:justify-end">
         <p class="font-bold text-lg">{textContactUs.footerRightText}</p>
-        <div class="flex h-5 flex-wrap justify-center gap-2">
+        <div class="flex h-5 flex-wrap sm:justify-center justify-start gap-2">
             <a href="https://www.instagram.com/padawanway" target="_blank" class="inline-flex items-center space-x-2 rounded bg-purple-500 p-2 font-semibold text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"

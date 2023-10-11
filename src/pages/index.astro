@@ -63,13 +63,23 @@ const idioma = "EN";
 </html>
 
 <script>
-  // Event listener para el botón con ID "#botonEs"
-  document.getElementById("botonEs").addEventListener("click", function() {
-    localStorage.setItem('lang', "ES")
-  });
+  // Esperar a que el DOM esté completamente cargado antes de agregar event listeners
+  document.addEventListener("DOMContentLoaded", function() {
+    // Event listener para el botón con ID "#botonEs"
+    const botonEs = document.getElementById("botonEs");
+    if (botonEs) {
+      botonEs.addEventListener("click", function() {
+        localStorage.setItem('lang', "ES");
+      });
+    }
 
-  // Event listener para el botón con ID "#botonEn"
-  document.getElementById("botonEn").addEventListener("click", function() {
-    localStorage.setItem('lang', "EN")
+    // Event listener para el botón con ID "#botonEn"
+    const botonEn = document.getElementById("botonEn");
+    if (botonEn) {
+      botonEn.addEventListener("click", function() {
+        localStorage.setItem('lang', "EN");
+      });
+    }
   });
 </script>
+
