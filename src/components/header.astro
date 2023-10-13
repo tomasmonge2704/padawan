@@ -2,13 +2,22 @@
 import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
-
-const navItems: Array<NavItem> = [
+const {idioma} = Astro.props;
+const navItemsEs: Array<NavItem> = [
+  { title: "Sobre Nosotros", url: "#ourway" },
+  { title: "Servicios", url: "#ourServices" },
+  {title:"Metodología",url:"#ourMetodology"},
+  { title: "Equipo", url: "#ourTeam" },
+  { title: "Contáctenos", url: "#contactUs" },
+];
+const navItemsEn: Array<NavItem> = [
   { title: "Our Way", url: "#ourway" },
-  { title: "Our Services", url: "#ourServices" },
-  { title: "Our Team", url: "#ourTeam" },
+  { title: "Services", url: "#ourServices" },
+  {title:"Methodology",url:"#ourMetodology"},
+  { title: "Team", url: "#ourTeam" },
   { title: "Contact Us", url: "#contactUs" },
 ];
+const navItems = idioma == "en" ? navItemsEn : navItemsEs;
 ---
 
 <header
@@ -37,9 +46,9 @@ const navItems: Array<NavItem> = [
               </li>
             ))
           }
-           <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEs">ES</button>
+           <a href="/" class="hover:text-white focus:outline-none" id="botonEs"><p class={idioma == "es" ? "text-purple-600" : "text-gray-300"}>ES</p></a>
            <span>|</span>
-           <button class="text-gray-300 hover:text-white focus:outline-none" id="botonEn">EN</button>
+           <a href="/en" class="text-gray-300 hover:text-white focus:outline-none" id="botonEn"><p class={idioma == "en" ? "text-purple-600" : "text-gray-300"}>EN</p></a>
         </ul>
       </nav>
       <button

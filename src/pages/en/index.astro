@@ -8,7 +8,7 @@ import OurMetodology from "~/components/ourMetodologhy.astro";
 import OurTeam from "~/components/ourTeam.astro";
 import AboutUs from "~/components/aboutUs.astro";
 import "~/styles/index.css";
-import {textEs} from "../lang/es";
+import {textEn} from "../../lang/en";
 const { generator, site } = Astro;
 const image = new URL("logo.png", site);
 ---
@@ -30,7 +30,7 @@ const image = new URL("logo.png", site);
     <title>Padawan</title>
     <meta
       name="description"
-      content={textEs.home}
+      content={textEn.home}
     />
 
     <!-- social media -->
@@ -38,7 +38,7 @@ const image = new URL("logo.png", site);
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content={textEs.home}
+      content={textEn.home}
     />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
@@ -47,15 +47,15 @@ const image = new URL("logo.png", site);
   <body
     class="h-full w-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Header idioma="es" />
-    <Home homeText={textEs.home} />
+    <Header idioma="en" />
+    <Home homeText={textEn.home} />
     <div class="space-y-24 px-8 py-32">
-      <OurWay textOurWay={textEs} />
-      <OurServices textOurServices={textEs} />
-      <OurMetodology textOurMetodology={textEs} />
-      <OurTeam textOurTeam={textEs} />
+      <OurWay textOurWay={textEn} />
+      <OurServices textOurServices={textEn} />
+      <OurMetodology textOurMetodology={textEn} />
+      <OurTeam textOurTeam={textEn} />
     </div>
-    <AboutUs textContactUs={textEs} />
+    <AboutUs textContactUs={textEn} />
     
   </body>
 </html>
