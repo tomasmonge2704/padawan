@@ -1,4 +1,5 @@
 ---
+import img from "~/assets/halcon-milenario-arriba-izq.png";
 const { textContactUs } = Astro.props;
 ---
 
@@ -17,7 +18,7 @@ const { textContactUs } = Astro.props;
       <p class="font-thin">The Mandalorian</p>
     </div>
     <img
-      src="./halcon-milenario-arriba-der.png"
+      src={img.src}
       alt="Nave Oscura"
       class="z-0 sm:ml-28"
       style="height:37rem; width:auto;"

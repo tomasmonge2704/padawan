@@ -1,7 +1,7 @@
 ---
 import Starfield from "~/components/starfield.astro";
 const { homeText } = Astro.props;
-
+import imagenHome from "~/assets/halcon-milenario-arriba-izq.png";
 ---
 
 <script>
@@ -42,7 +42,7 @@ const { homeText } = Astro.props;
 <section class="relative h-full w-full bg-black">
   <Starfield />
   <div class="relative grid h-full place-items-center content-center">
-    <img src="./halcon-milenario-arriba-izq.png" alt="Nave Oscura" class="absolute z-0 sm:h-3/4 h-2/5"  />
+    <img src={imagenHome.src} alt="Nave Oscura" class="absolute z-0 sm:h-3/4 h-2/5" />
     <h2
       style="font-family: 'Star Wars', sans-serif;"
       class="text-center font-light tracking-tighter sm:text-8xl text-4xl z-10"
