@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+import isologo from "~/assets/Iso_logo_for_Padawan.png";
 import logo from "~/assets/logo.png";
+import padawan from "~/assets/PaDawaN.png"
 const {idioma} = Astro.props;
 const navItemsEs: Array<NavItem> = [
   { title: "Sobre Nosotros", url: "#ourway" },
@@ -23,16 +25,11 @@ const navItems = idioma == "en" ? navItemsEn : navItemsEs;
 
 <header
   id="page-header"
-  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
 <a href="/#" class="flex text-center" style="align-items: center;" id="logo">
-  <img src={logo.src} alt="Logo" class="w-12 h-12 visible"  />
-  <h2
-      style="font-family: 'Star Wars', sans-serif;"
-      class="sm:inline hidden text-center gradient font-light tracking-tighter text-2xl z-10 ml-4 gradient-text"
-    >
-      PaDawaN
-    </h2>
+  <img src={isologo.src} alt="Logo" class="w-12 h-12 visible"  />
+  <img src={padawan.src} alt="Padawan" class="sm:inline hidden object-contain w-48 h-12 ml-4"  />
   </a>
   <div>
     <div class="flex items-center gap-6">

@@ -40,7 +40,7 @@ export const textEs = {
     ourTeam:
       "Trabajamos con una red de expertos que se incorporan por demanda del proyecto. ¿Quieres trabajar con nosotros? Contacta a ",
     contactUsTitle: "Contáctanos",
-    contactUsSubTitle: "Transformemos Tu Negocio Juntos",
+    contactUsSubTitle: "Transformamos su negocio?",
     desc: "Trabajemos juntos para alcanczar sus objetivos de transformación digital en su negocio. Contactar a ",
     footerRightText: "Acerca de Nosotros",
   };

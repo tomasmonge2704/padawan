@@ -2,6 +2,7 @@
 import Starfield from "~/components/starfield.astro";
 const { homeText } = Astro.props;
 import imagenHome from "~/assets/halcon-milenario-arriba-izq.png";
+import padawantext from "~/assets/PaDawaN_White.png";
 ---
 
 <script>
@@ -43,12 +44,7 @@ import imagenHome from "~/assets/halcon-milenario-arriba-izq.png";
   <Starfield />
   <div class="relative grid h-full place-items-center content-center">
     <img src={imagenHome.src} alt="Nave Oscura" class="absolute z-0 sm:h-3/4 h-2/5" />
-    <h2
-      style="font-family: 'Star Wars', sans-serif;"
-      class="text-center font-light tracking-tighter sm:text-8xl text-4xl z-10"
-    >
-      PaDawaN
-    </h2>
+   <img src={padawantext.src} alt="Padawan" class="z-10 w-1/3 object-cover" />
     <h3 class="mt-10 w-9/12 text-center z-10 font-medium">{homeText}</h3>
     <div class="scroll-downs relative top-40" id="scrollIcon">
       <div class="mousey">

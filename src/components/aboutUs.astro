@@ -1,5 +1,6 @@
 ---
 import img from "~/assets/halcon-milenario-arriba-der.png";
+import thistheway from "~/assets/This-Is-The-Way-white.png";
 const { textContactUs } = Astro.props;
 ---
 
@@ -9,13 +10,7 @@ const { textContactUs } = Astro.props;
 >
   <div class="flex sm:flex-row flex-col">
     <div class="grid place-items-center content-center">
-      <h2
-        style="font-family: 'Star Wars', sans-serif;"
-        class="z-10 sm:ml-10 text-center font-light tracking-tighter sm:text-5xl text-2xl"
-      >
-        this is the Way
-      </h2>
-      <p class="font-thin">The Mandalorian</p>
+      <img src={thistheway.src} class="sm:ml-10" style="width:35rem;" />
     </div>
     <img
       src={img.src}
