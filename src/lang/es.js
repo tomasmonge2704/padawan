@@ -1,17 +1,17 @@
 export const textEs = {
-    home: "Nace una nueva forma de desarrollo de software para ser utilizado en su empresa. Entendemos la realidad de tu empresa, por eso en PADAWAN creemos que la mejor manera de trabajar es emprender juntos el camino hacia su transformación digital basándonos en nuestra experiencia.",
-    ourWayTitle: "Nuestra Forma",
+    home: "Nace una nueva forma de desarrollar software para ser implementado en su empresa. Entendemos la realidad de tu negocio, por eso en PADAWAN creemos que la mejor manera de trabajar es emprender juntos el camino hacia su transformación digital sumando nuestra experiencia.",
+    ourWayTitle: "Nuestra Manera",
     guidanceTitle: "Orientación",
     guidance:
-      "Nuestro objetivo es guiar a nuestros clientes a través de su viaje de transformación digital.",
+      "Nuestro objetivo es guiar y colaborar activamente con los clientes en su viaje de transformación digital.",
     solutionsTitle: "Soluciones",
     solutions:
-      "Aportamos soluciones eficaces para garantizar el éxito de este proceso.",
+      "Aportamos y desarrollamos soluciones eficientes para garantizar el éxito de este proceso.",
     supportTitle: "Soporte",
-    support: "Ofrecemos un apoyo cercano para garantizar una transformación fluida.",
+    support: "Ofrecemos un apoyo cercano para garantizar una transformación fluida en todas las etapas.",
     leaderShipTitle: "Liderazgo",
     leaderShip:
-      "Nos esforzamos por convertirnos en la consultoría tecnológica líder, brindando asesoramiento experto para mejorar los resultados de nuestros clientes.",
+      "Con más de 20 años de experiencia efrecemos consultoría tecnológica de primer nível, brindando asesoramiento experto para mejorar los resultados de nuestros clientes.",
     ourServicesTitle: "Nuestros Servicios",
     consultingTitle: "Consultoría",
     consulting:
@@ -25,7 +25,7 @@ export const textEs = {
     ourMetodologyTitle: "Nuestra Metodología",
     colaborationTitle: "Colaboración",
     colaboration:
-      "Trabajamos estrechamente con tus equipos para entender tus necesidades y adaptarnos a tu realidad.",
+      "Trabajamos estrechamente con sus equipos para entender las necesidades y adaptarnos a la realidad de su negocio.",
     customizationTitle: "Personalización",
     customization:
       "Desarrollamos soluciones tecnológicas únicas que se adaptan a la situación específica de cada cliente.",
@@ -41,6 +41,6 @@ export const textEs = {
       "Trabajamos con una red de expertos que se incorporan por demanda del proyecto. ¿Quieres trabajar con nosotros? Contacta a ",
     contactUsTitle: "Contáctanos",
     contactUsSubTitle: "Transformemos Tu Negocio Juntos",
-    desc: "Permítenos ayudarte a alcanzar tus objetivos empresariales a través de la transformación digital. Contáctanos en ",
+    desc: "Trabajemos juntos para alcanczar sus objetivos de transformación digital en su negocio. Contactar a ",
     footerRightText: "Acerca de Nosotros",
   };
