@@ -9,9 +9,6 @@ import OurTeam from "~/components/ourTeam.astro";
 import AboutUs from "~/components/aboutUs.astro";
 import "~/styles/index.css";
 import {textEs} from "../lang/es";
-const { generator, site } = Astro;
-const image = new URL("logo.png", site);
-console.log(image)
 ---
 
 <!doctype html>
@@ -27,7 +24,6 @@ console.log(image)
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet" />
-    <meta name="generator" content={generator} />
   <!-- HTML Meta Tags -->
   <title>Padawan</title>
   <meta
@@ -41,7 +37,7 @@ console.log(image)
     <meta
       property="og:description"
       content={textEs.home}>
-  <meta property="og:image" content="https://padawanway.com/logo.png">
+  <meta property="og:image" content="https://padawanway.com/img-Meta-Tags-Card.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -51,7 +47,7 @@ console.log(image)
   <meta
   property="og:description"
   content={textEs.home}>
-<meta property="og:image" content="https://padawanway.com/logo.png">
+<meta property="og:image" content="https://padawanway.com/img-Meta-Tags-Card.png">
 
 </head>
   <body

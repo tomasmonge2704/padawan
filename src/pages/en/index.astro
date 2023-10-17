@@ -9,8 +9,6 @@ import OurTeam from "~/components/ourTeam.astro";
 import AboutUs from "~/components/aboutUs.astro";
 import "~/styles/index.css";
 import {textEn} from "../../lang/en";
-const { generator, site } = Astro;
-const image = new URL("logo.png", site);
 ---
 
 <!doctype html>
@@ -19,31 +17,39 @@ const image = new URL("logo.png", site);
   class="h-full w-full motion-safe:scroll-smooth"
   data-theme="dark"
 >
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet" />
-    <meta name="generator" content={generator} />
-    <title>Padawan</title>
-    <meta
-      name="description"
-      content={textEn.home}
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet" />
+<!-- HTML Meta Tags -->
+<title>Padawan</title>
+<meta
+property="og:description"
+content={textEn.home}>
 
-    <!-- social media -->
-    <meta property="og:title" content="Padawan" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content={textEn.home}
-    />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="logo">
+<meta property="og:title" content="Padawan">
+<meta property="og:type" content="website">
+  <meta
+    property="og:description"
+    content={textEn.home}>
+<meta property="og:image" content="https://padawanway.com/img-Meta-Tags-Card.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="padawanway.com">
+<meta property="twitter:url" content="https://padawanway.com/">
+<meta name="twitter:title" content="Padawan">
+<meta
+property="og:description"
+content={textEn.home}>
+<meta property="og:image" content="https://padawanway.com/img-Meta-Tags-Card.png">
+
+</head>
   <body
     class="h-full w-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
