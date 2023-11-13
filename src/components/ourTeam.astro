@@ -67,23 +67,28 @@ const teamMates = [
     </div>
   </Fragment>
   <Fragment slot="foot">
-    <div class="flex flex-col sm:flex-row justify-around">
-      <div class="mb-5">
+    <div class="grid w-full grid-cols-1 gap-5 sm:grid-cols-4">
+      <div class="sm:col-span-1">
         <Picture
           class="mx-auto my-auto object-cover"
           src={image5}
+          alt={textOurTeam.ourTeamSubtitle}
           widths={widths}
           sizes={sizes}
-          alt="network"
         />
       </div>
-      <div class="sm:w-2/3 w-full text-center sm:text-start">
-        <p class="font-bold text-xl">{textOurTeam.ourTeamSubtitle}</p>
-        <p class="font-thin text-lg">
-          {textOurTeam.ourTeam}<a href="mailto:hr@padawanway.com">hr@padawanway.com</a>
+      <div
+        class="flex flex-col justify-center text-center sm:col-span-3 sm:text-left"
+      >
+        <p class="mb-2 font-bold text-2xl">
+          {textOurTeam.ourTeamSubtitle}
+        </p>
+        <p class="font-thin text-xl">
+          {textOurTeam.ourTeam}<a href="mailto:hr@padawanway.com"
+            >hr@padawanway.com</a
+          >
         </p>
       </div>
     </div>
-    
   </Fragment>
 </ContentSection>
