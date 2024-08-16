@@ -1,10 +1,12 @@
 ---
 import ContentSection from "~/components/content-section.astro";
-import image from "~/assets/img-our-team-guillermo.png";
-import image2 from "~/assets/img-our-team-leandro.png";
-import image3 from "~/assets/img-our-team-tomas.png";
-import image4 from "~/assets/img-our-team-Santi.png";
-import image5 from "~/assets/img-our-team-network.png";
+import guille from "~/assets/img-our-team-guillermo.png";
+import lean from "~/assets/img-our-team-leandro.png";
+import tomi from "~/assets/img-our-team-tomas.png";
+import santi from "~/assets/img-our-team-Santi.png";
+import agus from "~/assets/img-our-team-agus.png";
+import fede from "~/assets/img-our-team-fede.png";
+import ciruela from "~/assets/img-our-team-ciruela.png";
 import { Picture } from "@astrojs/image/components";
 const { textOurTeam } = Astro.props;
 const widths = [500, 800, 1200];
@@ -14,79 +16,88 @@ const teamMates = [
     nombre: "Guillermo Monge",
     rol: "Product & Project Manager",
     mail: "guillermo@padawanway.com",
-    linkedin: "",
-    imgUrl: image,
+    linkedin: "https://www.linkedin.com/in/gdmonge/",
+    imgUrl: guille,
   },
   {
     nombre: "Leandro Diato",
-    rol: "Senior Backend Developer",
+    rol: "Software Architect & TL",
     mail: "leandro@padawanway.com",
-    linkedin: "",
-    imgUrl: image2,
+    linkedin: "https://www.linkedin.com/in/leandrodiato/",
+    imgUrl: lean,
   },
   {
     nombre: "Tomás Monge Vidal",
     rol: "Full Stack Developer",
     mail: "tomas@padawanway.com",
-    linkedin: "",
-    imgUrl: image3,
+    linkedin: "https://www.linkedin.com/in/tomas-monge-vidal-4070a021b/",
+    imgUrl: tomi,
   },
   {
     nombre: "Santiago Del Rio",
-    rol: "Full Stack Developer",
+    rol: "Frontend Developer",
     mail: "santiago@padawanway.com",
+    linkedin: "https://www.linkedin.com/in/santiago-del-rio/",
+    imgUrl: santi,
+  },
+  {
+    nombre: "Agustina Inés Sosa",
+    rol: "Analista Funcional & QA",
+    mail: "agustina@padawanway.com",
     linkedin: "",
-    imgUrl: image4,
+    imgUrl: agus,
+  },
+  {
+    nombre: "Federico Merino",
+    rol: "Backend Developer",
+    mail: "federico@padawanway.com",
+    linkedin: "",
+    imgUrl: fede,
   },
 ];
 ---
 
 <ContentSection title={textOurTeam.ourTeamTitle} id="ourTeam">
   <Fragment slot="paragraph">
-    <div
-      class="mb-10 mt-10 grid w-full grid-cols-1 gap-10 sm:grid-cols-4 sm:gap-1"
-    >
-      {
-        teamMates.map((e) => (
-          <div class="items-center text-center">
-            <Picture
-              class="mx-auto my-auto mb-5 object-cover"
-              src={e.imgUrl}
-              widths={widths}
-              sizes={sizes}
-              alt={e.nombre}
-            />
-            <p class="font-bold">{e.nombre}</p>
-            <p class="font-light text-base">{e.rol}</p>
+    <div class="mb-10 mt-10 grid w-full grid-cols-1 gap-10 lg:grid-cols-3">
+      {teamMates.map((e) => (
+        <div class="flex flex-col items-center lg:flex-row lg:items-start">
+          <Picture
+            class="w-48 h-48 lg:w-32 lg:h-32 object-cover" 
+            src={e.imgUrl}
+            widths={widths}
+            sizes={sizes}
+            alt={e.nombre}
+          />
+          <div class="mt-4 lg:mt-0 lg:ml-4 text-center lg:text-left">
+            <p class="font-bold text-lg lg:text-base">{e.nombre}</p>
+            <p class="font-light text-base lg:text-sm">{e.rol}</p>
             <a href={"mailto:" + e.mail}>
-              <p class="font-thin text-base">{e.mail}</p>
+              <p class="font-thin text-base lg:text-sm">{e.mail}</p>
             </a>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </Fragment>
   <Fragment slot="foot">
-    <div class="grid w-full grid-cols-1 gap-5 sm:grid-cols-4">
-      <div class="sm:col-span-1">
+    <div class="grid w-full grid-cols-1 gap-0 sm:grid-cols-3 lg:grid-cols-12 items-center">
+      <div class="sm:col-span-1 lg:col-span-2 flex justify-center lg:justify-start p-0 m-0"> 
         <Picture
-          class="mx-auto my-auto object-cover"
-          src={image5}
+          class="object-cover"
+          src={ciruela}
           alt={textOurTeam.ourTeamSubtitle}
           widths={widths}
           sizes={sizes}
         />
       </div>
       <div
-        class="flex flex-col justify-center text-center sm:col-span-3 sm:text-left"
-      >
-        <p class="mb-2 font-bold text-2xl">
+        class="flex flex-col justify-center text-center sm:col-span-2 lg:col-span-10 sm:text-left space-y-1 p-0 m-0"> 
+        <p class="font-bold text-2xl">
           {textOurTeam.ourTeamSubtitle}
         </p>
         <p class="font-thin text-xl">
-          {textOurTeam.ourTeam}<a href="mailto:hr@padawanway.com"
-            >hr@padawanway.com</a
-          >
+          {textOurTeam.ourTeam}<a href="mailto:hr@padawanway.com">hr@padawanway.com</a>
         </p>
       </div>
     </div>

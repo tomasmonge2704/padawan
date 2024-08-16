@@ -1,7 +1,7 @@
 ---
 import Starfield from "~/components/starfield.astro";
 const { homeText } = Astro.props;
-import imagenHome from "~/assets/halcon-milenario-arriba-izq.webp";
+import imagenHome from "~/assets/nave.webp";
 import padawantext from "~/assets/PaDawaN_White.webp";
 ---
 
@@ -43,7 +43,11 @@ import padawantext from "~/assets/PaDawaN_White.webp";
 <section class="relative h-full w-full bg-black">
   <Starfield />
   <div class="relative grid h-full place-items-center content-center">
-    <img src={imagenHome.src} alt="Nave Oscura" class="absolute z-0 sm:h-3/4 h-2/5" />
+    <img
+  src={imagenHome.src}
+  alt="Nave Oscura"
+  class="absolute z-0 sm:h-3/4 h-2/5 nave-animacion transition-transform duration-1000 ease-in-out"
+/>
    <img src={padawantext.src} alt="Padawan" class="z-10 w-1/3 object-cover" />
     <h3 class="mt-10 w-9/12 text-center z-10 font-medium">{homeText}</h3>
     <div class="scroll-downs relative top-40" id="scrollIcon">
@@ -95,3 +99,16 @@ import padawantext from "~/assets/PaDawaN_White.webp";
     }
   }
 </style>
+
+<script>
+ document.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const nave = document.querySelector('.nave-animacion');
+
+  if (scrollPosition > 80) {
+    nave.classList.add('scale-50', '-translate-y-80'); // Se achica menos (50%) y se mueve más hacia arriba
+  } else {
+    nave.classList.remove('scale-50', '-translate-y-80');
+  }
+});
+</script>
