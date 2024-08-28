@@ -1,5 +1,5 @@
 export const textEn = {
-    home: "A new way of software development is born to be used in your company. We understand the reality of your company, which is why at PADAWAN we believe that the best way to work is to take the path towards their digital transformation togetherbased on our experience.",
+    home: "A new way of software development is born to be used in your company. We understand the reality of your company, which is why at PADAWAN we believe that the best way to work is to take the path towards their digital transformation together based on our experience.",
     ourWayTitle: "Our Way",
     guidanceTitle: "Guidance",
     guidance:
@@ -38,9 +38,9 @@ export const textEn = {
     ourTeamTitle: "Our Team",
     ourTeamSubtitle: "Network of Developers and consultants",
     ourTeam:
-      "We work with a network of experts who join due to project demand. Do you want to work with us? Contact to ",
+      "We work with a network of experts who join due to project demand. Do you want to work with us? Contact ",
     contactUsTitle: "Contact Us",
     contactUsSubTitle: "Let's Transform Your Business Together",
-    desc: "Let us help you achieve your business goals throughdigital transformation. Contact to ",
+    desc: "Let us help you achieve your business goals through digital transformation. Contact ",
     footerRightText: "About Us",
   };
