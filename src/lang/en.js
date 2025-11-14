@@ -40,7 +40,7 @@ export const textEn = {
     ourTeam:
       "We work with a network of experts who join due to project demand. Do you want to work with us? Contact ",
     contactUsTitle: "Contact Us",
-    contactUsSubTitle: "Let's Transform Your Business Together",
+    contactUsSubTitle: "Let's transform your business together through digital",
     desc: "Let us help you achieve your business goals through digital transformation. Contact ",
     footerRightText: "About Us",
   };
